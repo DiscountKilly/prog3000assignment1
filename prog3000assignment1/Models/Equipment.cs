@@ -7,6 +7,9 @@ namespace prog3000assignment1.Models
 {
     public class Equipment
     {
-        public int MyProperty { get; set; }
+        public string EquipmentName { get; set; }
+        public int EquipmentID { get; set; }
+        public string EquipmentDesc { get; set; }
+        public bool EquipmentAvailability { get; set; }
     }
 }
