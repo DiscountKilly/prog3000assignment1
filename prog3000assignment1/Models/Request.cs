@@ -22,6 +22,6 @@ namespace prog3000assignment1.Models
         [Required(ErrorMessage = "Choose a role")]
         public string Role { get; set; }
         [Required(ErrorMessage = "Choose an equipment")]
-        public EquipCategory Equipment { get; set; }
+        public EquipCategory EquipmentCat { get; set; }
     }
 }

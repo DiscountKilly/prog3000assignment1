@@ -11,5 +11,6 @@ namespace prog3000assignment1.Models
         public int EquipmentID { get; set; }
         public string EquipmentDesc { get; set; }
         public bool EquipmentAvailability { get; set; }
+        public EquipCategory EquipmentCat { get; set; }
     }
 }
