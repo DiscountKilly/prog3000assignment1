@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "RequestForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @using prog3000assignment1.Models
+    @model prog3000assignment1.Models.Request
+}
+
+<h1>Request Form</h1>
+
+<body>
+    
+    <form asp-action="RequestForm" method="post">
+        <div class="form-group">
+            <label for="exampleInputName">Name</label>
+            <input type="email" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPhone">Phone Number</label>
+            <input type="number" class="form-control" id="exampleInputPhoneNum" aria-describedby="phoneNumHelp" placeholder="Enter Phone Number">
+        </div>
+
+        <div>
+            <label for="exampleInputRole">Role</label>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Role</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Student</a>
+                    <a class="dropdown-item" href="#">Professor</a>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label for="Equipment">Equipment type</label>
+        </div>
+
+        <div class="form-group">
+            <select multiple class="form-control" asp-for="Equipment" asp-items="Html.GetEnumSelectList<EquipCategory>()">
+                <option>Select an Equipment Category</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="InputReason">Request Details</label>
+            <input class="form-control" id="exampleInputRequest" aria-describedby="nameHelp" placeholder="Enter request details">
+        </div>
+
+        <div id="submitbtn" style="margin-top: 50px">
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+        </div>
+
+
+    </form>
+</body>
+
