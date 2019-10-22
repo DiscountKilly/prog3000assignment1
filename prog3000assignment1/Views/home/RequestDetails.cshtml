@@ -2,7 +2,43 @@
 @{
     ViewData["Title"] = "RequestDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    @using prog3000assignment1.Models
+    @model prog3000assignment1.Models.Request
 }
 
 <h1>Request Details</h1>
 
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Role</th>
+                <th scope="col">Equipment Category</th>
+                <th scope="col">Duration</th>
+
+            </tr>
+        </thead>
+        <tbody>
+       
+            <tr>
+                <td scope="col">@Model.Name</td>
+                <td scope="col">@Model.Email</td>
+                <td scope="col">@Model.PhoneNum</td>
+                <th scope="col">@Model.Role</th>
+                <td scope="col">@Model.EquipmentCat</td>
+                <td scope="col">@Model.RequestDuration</td>
+
+            </tr>
+          
+
+
+        </tbody>
+    </table>
+    <div>
+        <button type="button" class="btn btn-primary">Accept</button>
+        <button type="button" class="btn btn-primary">Deny</button>
+    </div>
+</body>

@@ -46,5 +46,21 @@ namespace prog3000assignment1.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult RequestDetails(int id)
+        {
+
+            
+            var someID = Repository.RequestList.Find(x => x.RequestID == id);
+            if (someID == null)
+            {
+                return View("Error");
+            }
+            else
+            {
+                return View(someID);
+            }
+           
+        }
     }
 }

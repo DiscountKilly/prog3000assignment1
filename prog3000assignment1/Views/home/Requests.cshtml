@@ -13,22 +13,24 @@
         <thead>
             <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Role</th>
+                <th scope="col">ID</th>
                 <th scope="col">Equipment Type</th>
-                <th scope="col">Details</th>
                 <th scope="col">Duration(Days)</th>
+                <th scope="col">Details</th>
+
             </tr>
         </thead>
         <tbody>
             @foreach (Request x in Repository.GetRequests())
             {
-                <tr>
-                    <td scope="col">@x.Name</td>
-                    <td scope="col">@x.RequestID</td>
-                    <td scope="col">@x.EquipmentCat</td>
-                    <td scope="col"><a href="/home/RequestDetails">@x.RequestDetails</a></td>
-                    <th scope="col">@x.RequestDuration</th>
-                </tr>
+            <tr>
+                <td scope="col">@x.Name</td>
+                <td scope="col">@x.RequestID</td>
+                <td scope="col">@x.EquipmentCat</td>
+                <th scope="col">@x.RequestDuration</th>
+                <td scope="col"><a href="/home/RequestDetails/@x.RequestID">@x.RequestDetails</a></td>
+
+            </tr>
 
             }
 
