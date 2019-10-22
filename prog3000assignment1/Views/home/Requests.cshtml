@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Requests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @using prog3000assignment1.Models
+    @model prog3000assignment1.Models.Request
+}
+
+<h1>Requests(Top Secret Admin Page)</h1>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Equipment Type</th>
+                <th scope="col">Details</th>
+                <th scope="col">Duration(Days)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Request x in Repository.GetRequests())
+            {
+                <tr>
+                    <td scope="col">@x.Name</td>
+                    <td scope="col">@x.RequestID</td>
+                    <td scope="col">@x.EquipmentCat</td>
+                    <td scope="col"><a href="/home/RequestDetails">@x.RequestDetails</a></td>
+                    <th scope="col">@x.RequestDuration</th>
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+</body>
+

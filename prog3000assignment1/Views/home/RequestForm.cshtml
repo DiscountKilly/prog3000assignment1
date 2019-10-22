@@ -49,8 +49,12 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="InputReason">Request Details</label>
-            <input class="form-control" id="exampleInputRequest" aria-describedby="nameHelp" placeholder="Enter request details">
+            <label asp-for="RequestDuration">Request Duration</label>
+            <input class="form-control" asp-for="RequestDuration" aria-describedby="phoneNumHelp" placeholder="Enter Request Duration">
+        </div>
+        <div class="form-group">
+            <label asp-for="RequestDetails">Request Details</label>
+            <input class="form-control" asp-for="RequestDetails" aria-describedby="nameHelp" placeholder="Enter request details">
         </div>
 
         <div id="submitbtn" style="margin-top: 50px">

@@ -23,7 +23,9 @@ namespace prog3000assignment1.Models
         public string Role { get; set; }
         [Required(ErrorMessage = "Choose an equipment")]
         public EquipCategory EquipmentCat { get; set; }
-
+        public string RequestDetails { get; set; }
+        [Required(ErrorMessage = "Enter a duration in days")]
+        public int RequestDuration { get; set; }
         public int RequestID { get; set; }
     }
 }

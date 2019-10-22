@@ -38,5 +38,13 @@ namespace prog3000assignment1.Controllers
         {
             return View();
         }
+        public IActionResult Requests()
+        {
+            return View();
+        }
+        public IActionResult RequestDetails()
+        {
+            return View();
+        }
     }
 }
