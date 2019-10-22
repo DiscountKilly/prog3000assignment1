@@ -5,9 +5,24 @@ using System.Threading.Tasks;
 
 namespace prog3000assignment1.Models
 {
+
+   
     public class Repository
     {
-        List<Request> Requests = new List<Request>();
+        public static int reqCount = 0;
+
+        public static List<Request> RequestList = new List<Request>();
+        public static List<Request> GetRequests()
+        {
+            return RequestList;
+        }
+
+        public static void InsertRequest(Request request)
+        {
+            reqCount = reqCount + 1;
+            request.RequestID = reqCount;
+            RequestList.Add(request);
+        }
 
         public static List<Equipment> GetEquipments()
         {

@@ -9,36 +9,36 @@
 <h1>Request Form</h1>
 
 <body>
-    
+
+    <!-- CHANGE FOR TO ASP-FOR, CHANGE ID TO ASP-FOR, CHANGE ID AND FOR NAMES TO THE ONES FROM THE REQUESTS MODEL-->
+
     <form asp-action="RequestForm" method="post">
         <div class="form-group">
-            <label for="exampleInputName">Name</label>
-            <input type="email" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter name">
+            <label asp-for="Name">Name</label>
+            <input class="form-control" asp-for="Name" aria-describedby="nameHelp" placeholder="Enter name">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+            <label asp-for="Email">Email</label>
+            <input type="email" class="form-control" asp-for="Email" aria-describedby="emailHelp" placeholder="Enter email">
         </div>
         <div class="form-group">
-            <label for="exampleInputPhone">Phone Number</label>
-            <input type="number" class="form-control" id="exampleInputPhoneNum" aria-describedby="phoneNumHelp" placeholder="Enter Phone Number">
+            <label asp-for="PhoneNum">Phone Number</label>
+            <input class="form-control" asp-for="PhoneNum" aria-describedby="phoneNumHelp" placeholder="Enter Phone Number">
         </div>
 
         <div>
-            <label for="exampleInputRole">Role</label>
+            <label for="Role">Role</label>
         </div>
-        <div class="input-group">
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Role</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Student</a>
-                    <a class="dropdown-item" href="#">Professor</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-            </div>
+
+        <div class="form-group">
+            <select multiple class="form-control" asp-for="Role">
+                <option>Select an Equipment Category</option>
+                <option value="1">Student</option>
+                <option value="2">Professor</option>
+            </select>
         </div>
+
+
         <div>
             <label for="Equipment">Equipment type</label>
         </div>

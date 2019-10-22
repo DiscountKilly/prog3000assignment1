@@ -1,12 +1,12 @@
 ﻿
 @{
-    ViewData["Title"] = "AllEquipment";
+    ViewData["Title"] = "AvailableEquipments";
     Layout = "~/Views/Shared/_Layout.cshtml";
     @using prog3000assignment1.Models
     @model prog3000assignment1.Models.Request
 }
 
-<h1>AllEquipment</h1>
+<h1>Available Equipments</h1>
 
 
 <body>
@@ -23,18 +23,18 @@
         <tbody>
             @foreach (Equipment x in Repository.GetEquipments())
             {
-                <tr>
-                    <td scope="col">@x.EquipmentName</td>
-                    <td scope="col">@x.EquipmentID</td>
-                    <td scope="col">@x.EquipmentDesc</td>
-                    <td scope="col">@x.EquipmentCat</td>
-                    <td scope="col">@x.EquipmentAvailability</td>
-                </tr>
-               
+                if (x.EquipmentAvailability == true)
+                {
+                    <tr>
+                        <td scope="col">@x.EquipmentName</td>
+                        <td scope="col">@x.EquipmentID</td>
+                        <td scope="col">@x.EquipmentDesc</td>
+                        <td scope="col">@x.EquipmentCat</td>
+                        <td scope="col">@x.EquipmentAvailability</td>
+                    </tr>
+                }
             }
 
         </tbody>
     </table>
 </body>
-
-
